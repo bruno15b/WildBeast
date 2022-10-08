@@ -1,9 +1,9 @@
 body {
   margin: 0px;
   padding: 0px;
-  background: cadetblue;
+  font-family: Vollkorn;
 }
-
+blockquote,
 h1,
 h2,
 p,
@@ -17,9 +17,22 @@ li,
 ul {
   list-style: none;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 img {
-  max-width: 100%;
+  width: 100%;
   display: block;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: rgba(0, 0, 0, 0.699);
 }
 
 .container {
@@ -28,7 +41,7 @@ img {
     "header header header"
     "icons main prop"
     "footer footer footer"
-    /160px 4fr 1fr;
+    / minmax(160px, 1fr) 3fr 1fr;
 }
 
 .header {
@@ -37,6 +50,11 @@ img {
   grid-template-columns: 1fr auto;
   align-items: center;
   padding: 30px;
+  background: linear-gradient(to right, #8844ee, #b07dfb);
+}
+
+.header img {
+  width: 200px;
 }
 
 .header ul {
@@ -44,30 +62,200 @@ img {
   gap: 20px;
 }
 
-.header img {
-  width: 200px;
+.header li a {
+  color: white;
+  padding: 10px 10px;
+  background: rgba(0, 0, 0, 0.089);
+  font-size: 1.125rem;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
-.header .icones-esq {
-  grid-column: icons;
+.header li a:hover {
+  background: rgba(0, 0, 0, 0.459);
+}
+
+.icones-nav {
+  grid-area: icons;
+  padding: 30px;
+  background: #fafbfc;
+}
+
+.icones-nav a {
+  display: block;
+  margin: 0 auto 30px auto;
+  padding: 20px;
+  min-width: 60px;
+  max-width: 100px;
+  box-shadow: 5px 5px 15px 0px rgb(44 44 44 / 15%);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.icones-nav a:hover {
+  background: #b07dfb;
 }
 
 .main {
+  padding: 30px;
   display: grid;
   grid-template:
     "titulo info"
-    "texto texto"
+    "texto1 texto1"
+    "foto1 nota"
     "foto1 foto2"
+    "texto2 texto3"
     "quote quote"
-    "ficha texto2"
-    "foto2 foto3";
-  grid-column: main;
+    "ficha texto4"
+    "foto3 foto3"
+    /1fr 1fr;
+  max-width: 900px;
+  grid-area: main;
+  justify-self: center;
+  gap: 30px;
 }
 
-.propagandas-dir {
-  grid-column: prop;
+.main img {
+  border-radius: 5px;
+}
+
+.propagandas {
+  grid-area: prop;
+  padding: 30px;
+  background: #fafbfc;
+}
+
+.propagandas img {
+  width: 240px;
+  border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 footer {
-  grid-column: footer;
+  grid-area: footer;
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(to right, #8844ee, #b07dfb);
+  color: white;
+}
+
+.titulo {
+  grid-area: titulo;
+  color: #b07dfb;
+}
+
+.titulo h1 {
+  font-size: 3.75em;
+  line-height: 1;
+  font-weight: 700;
+}
+.titulo span {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.info {
+  grid-area: info;
+}
+
+.info div {
+  width: 80px;
+  height: 100px;
+  margin-right: 20px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.info span {
+  display: block;
+  color: #b07dfb;
+  text-align: center;
+  box-shadow: 5px 5px 15px 0px rgb(44 44 44 / 15%);
+}
+
+.numero {
+  font-size: 3em;
+  line-height: 1;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.rotulo {
+  padding: 5px;
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.texto1 {
+  grid-area: texto1;
+}
+
+.lobos1 {
+  grid-area: foto1;
+  align-self: end;
+}
+
+.nota {
+  grid-area: nota;
+  font-size: 0.875em;
+  color: #b07dfb;
+  max-width: 220px;
+}
+
+.texto2 {
+  grid-area: texto2;
+}
+
+.texto3 {
+  grid-area: texto3;
+}
+
+.lobos2 {
+  grid-area: foto2;
+  align-self: end;
+}
+
+.quote {
+  grid-area: quote;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  box-shadow: 5px 5px 15px 0px rgb(44 44 44 / 15%);
+  border-radius: 5px;
+}
+
+.quote p {
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center;
+  color: white;
+  padding: 30px;
+}
+
+.ficha {
+  grid-area: ficha;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  box-shadow: 5px 5px 15px 0px rgb(44 44 44 / 15%);
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.ficha p {
+  color: white;
+  font-size: 1.125em;
+  padding: 15px;
+}
+.ficha p + p {
+  border-top: 1px solid white;
+}
+
+.texto4 {
+  grid-area: texto4;
+}
+
+.foto {
+  grid-area: foto3;
 }
