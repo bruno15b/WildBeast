@@ -1,0 +1,73 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background: cadetblue;
+}
+
+h1,
+h2,
+p,
+li,
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li,
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  display: grid;
+  grid-template:
+    "header header header"
+    "icons main prop"
+    "footer footer footer"
+    /160px 4fr 1fr;
+}
+
+.header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 30px;
+}
+
+.header ul {
+  display: flex;
+  gap: 20px;
+}
+
+.header img {
+  width: 200px;
+}
+
+.header .icones-esq {
+  grid-column: icons;
+}
+
+.main {
+  display: grid;
+  grid-template:
+    "titulo info"
+    "texto texto"
+    "foto1 foto2"
+    "quote quote"
+    "ficha texto2"
+    "foto2 foto3";
+  grid-column: main;
+}
+
+.propagandas-dir {
+  grid-column: prop;
+}
+
+footer {
+  grid-column: footer;
+}
