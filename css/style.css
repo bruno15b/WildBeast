@@ -249,7 +249,7 @@ footer {
   padding: 15px;
 }
 .ficha p + p {
-  border-top: 1px solid white;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .texto4 {
@@ -258,4 +258,107 @@ footer {
 
 .foto {
   grid-area: foto3;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template:
+      "header header header"
+      "icons main main"
+      "icons prop prop"
+      "footer footer footer";
+  }
+  .propagandas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .propagandas img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template:
+      "header header header"
+      "icons icons icons"
+      "main main main"
+      "prop prop prop"
+      "footer footer footer";
+  }
+
+  .icones-nav ul {
+    display: flex;
+  }
+  .icones-nav a {
+    margin: 30px 30px 30px 0;
+  }
+  .icones-nav {
+    padding: 0 0 0 30px;
+    overflow-x: auto;
+    position: relative;
+  }
+
+  @keyframes seta {
+    from {
+      right: 30px;
+    }
+    to {
+      right: 10px;
+    }
+  }
+
+  .icones-nav::after {
+    content: "→";
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #9b9b9b;
+    animation: seta 0.5s ease-in 0s infinite alternate;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    justify-items: center;
+  }
+  .header li a {
+    display: inline-block;
+  }
+  .main {
+    grid-template:
+      "titulo titulo"
+      "info info"
+      "texto1 texto1"
+      "foto1 nota"
+      "foto1 foto2"
+      "texto2 texto3"
+      "quote quote"
+      "texto4 texto4"
+      "ficha ficha"
+      "foto3 foto3" /1fr 1fr;
+  }
+  .ficha {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    grid-template:
+      "titulo"
+      "info"
+      "texto1"
+      " nota"
+      "foto1"
+      "texto2"
+      "foto2"
+      "texto3"
+      "quote"
+      "texto4"
+      "ficha"
+      "foto3" /1fr;
+  }
 }
